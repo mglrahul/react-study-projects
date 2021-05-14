@@ -16,15 +16,15 @@ const cartReducer = (state, action) => {
   if(action.type === 'ADD'){
     console.log('action.type===add', state);
     
-    const updatedItems = state && state.items.concat(action.item);
-    const updatedTotalAmount = state && state.totalAmount + (action.item.price * action.item.amount)
+    const updatedItems = state.items.concat(action.item);
+    const updatedTotalAmount = state.totalAmount + (action.item.price * action.item.amount)
 
     console.log('action.type===add', updatedItems, updatedTotalAmount);
-    return;
-    // return {
-    //   items: updatedItems,
-    //   totalAmount : updatedTotalAmount
-    // }
+  
+    return {
+      items: updatedItems,
+      totalAmount : updatedTotalAmount
+    }
   }else if(action.type === 'DELETE'){
     // const updatedItems = state.items.map(item => item.id !== action.id);
     // const updatedTotalAmount = state.totalAmount - (action.item.price * action.item.amount)
