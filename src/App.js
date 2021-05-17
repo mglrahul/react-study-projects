@@ -1,10 +1,9 @@
-import React from 'react';
+import Users from './components/Users';
 
-const App = () => {
-  
+function App() {
   return (
     <div>
-      Hello World
+      <Users />
     </div>
   );
 }
